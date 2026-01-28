@@ -1,5 +1,6 @@
 import { Component, signal } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
@@ -7,5 +8,12 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('barberia');
+  showform: boolean = false;
+  
+  showForm(){
+    this.showform=false;
+  }
+  showMain(){
+    return this.showform= true;
+  }
 }

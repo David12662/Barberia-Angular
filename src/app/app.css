@@ -1,0 +1,40 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 50vw;
+
+}
+.rueda{
+    height: 40px;
+    width: 40px;
+    border: solid  rgb(68, 51, 51);
+    margin-top: 4%;
+}
+.bigote{
+    height: 100px;
+    width: 100px;
+}
+.inicio{
+    height: 40px;
+    width: fit-content;
+    margin-top: 4%;
+}
+.middiv{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+.tijeras{
+    rotate: 90deg;
+    height: 200px;
+    width: 200px;
+}
+.barba{
+    height: 200px;
+    width: 200px;
+}
+.border{
+    border: solid 2px black;
+    border-radius: 100%;
+    padding: 10px;
+}
