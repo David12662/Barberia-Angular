@@ -6,12 +6,12 @@
 <div class="middiv">
   @if(showform){
   <div class="border">
-    <img src="tijeras.png" alt="tijeras" class="tijeras">
+    <img (click)="showSchedule1()" src="tijeras.png" alt="tijeras" class="tijeras">
   </div>
   <div class="border">
-    <img src="barba.png" alt="barba" class="barba">
+    <img (click)="showSchedule2()" src="barba.png" alt="barba" class="barba">
   </div>
-
+    
   }@else{
     <label>Usuario</label>
     <input type="text">
@@ -19,6 +19,24 @@
     <input type="text">
     <button class="iniciarSesionForm" (click)="showMain()">Iniciar Sesion</button>
   }
+</div>
+<div class="horario">
+  @if(showScheduleScissors){
+      <button>10:00</button>
+      <button>11:00</button>
+      <button>12:00</button>
+      <button>13:00</button>
+      <button>14:00</button>
+    }
+
+    @if(showScheduleBeard){
+      <button>10:00</button>
+      <button>11:00</button>
+      <button>12:00</button>
+      <button>13:00</button>
+      <button>14:00</button>
+
+    }
 </div>
 
 

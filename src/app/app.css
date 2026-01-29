@@ -38,3 +38,11 @@
     border-radius: 100%;
     padding: 10px;
 }
+.horario{
+    margin-top: 5%;
+    text-align: center;
+}
+.horario > button{
+    margin: 3%;
+    width: 80px;
+}
