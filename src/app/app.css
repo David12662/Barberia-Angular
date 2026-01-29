@@ -38,6 +38,17 @@
     border-radius: 100%;
     padding: 10px;
 }
+.input{
+    text-align: center;
+    margin-top: 4%;
+}
+input{
+    border: none;
+    border-bottom: solid 3px black;
+}
+input:focus{
+    outline: none;
+}
 .horario{
     margin-top: 5%;
     text-align: center;

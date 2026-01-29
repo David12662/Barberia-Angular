@@ -11,6 +11,12 @@ export class App {
   showform: boolean = true;
   showScheduleScissors: boolean= false;
   showScheduleBeard: boolean = false;
+
+  date=new Date()
+  day=this.date.getDay()
+  month=this.date.getMonth()+1;
+  alldate=this.day+"/"+this.month
+  
   
   showForm(){
     this.showform=false;
