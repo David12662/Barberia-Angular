@@ -1,7 +1,11 @@
 <div class="navbar">
   <img src="config.png" alt="config" class="rueda">
   <img src="bigote.png" alt="bigoton" class="bigote">
+  @if(!loggeduser){
   <button class="inicio" (click)="showForm()">Iniciar sesión</button>
+  }@else{
+    <span class="usuario" (click)="showForm()">Hola, {{loggeduser.username}}</span>
+  }
 </div>
 <div class="middiv">
   @if(showform){
@@ -11,36 +15,42 @@
   <div class="border">
     <img (click)="showSchedule2()" src="barba.png" alt="barba" class="barba">
   </div>
-    
+
   }@else{
     <label>Usuario</label>
-    <input type="text">
+    <input type="text" #user>
     <label>Contraseña</label>
-    <input type="text">
-    <button class="iniciarSesionForm" (click)="showMain()">Iniciar Sesion</button>
+    <input type="password" #pass>
+    <button class="iniciarSesionForm" (click)="login(user.value, pass.value)">Iniciar Sesion</button>
   }
 </div>
+@if(showinput){
 <div class="input">
-  <input type="text" placeholder={{alldate}}>
+  <input type="text" [placeholder]="alldate">
 </div>
+}
 
 <div class="horario">
   @if(showScheduleScissors){
-      <button>10:00</button>
-      <button>11:00</button>
-      <button>12:00</button>
-      <button>13:00</button>
-      <button>14:00</button>
-    }
+    @for (hour of getScissorsHours(); track hour.time) {
+      <button
+      [disabled]="hour.reserved && hour.userid !== loggeduser?.id"
+      [ngClass]="{ reserved: hour.reserved, mine: hour.userid === loggeduser?.id
 
-    @if(showScheduleBeard){
-      <button>10:00</button>
-      <button>11:00</button>
-      <button>12:00</button>
-      <button>13:00</button>
-      <button>14:00</button>
-
+      }" (click)="selectHour(hour)">{{hour.time}}
+    </button>
     }
+  }
+  @if(showScheduleBeard){
+    @for (hour of getBeardHours(); track hour.time) {
+      <button
+      [disabled]="hour.reserved && hour.userid !== loggeduser?.id"
+      [ngClass]="{ reserved: hour.reserved, mine: hour.userid === loggeduser?.id
+
+      }" (click)="selectHour(hour)">{{hour.time}}
+    </button>
+    }
+  }
 </div>
 
 
